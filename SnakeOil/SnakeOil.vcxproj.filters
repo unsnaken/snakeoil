@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Input">
+      <UniqueIdentifier>{ae9b317b-4f1f-4682-8f29-24d4b680b226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World">
+      <UniqueIdentifier>{626934e9-7172-47dd-9b8f-1699013ec1cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{87a30b5c-11ca-439e-8ba8-1401e7188ece}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="General">
+      <UniqueIdentifier>{9ded9db0-7d7c-47fd-9290-65f3be2bc1fc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sources\Game.cpp" />
+    <ClCompile Include="Sources\Startup.cpp" />
+    <ClCompile Include="Sources\StdAfx.cpp">
+      <Filter>General</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\InputMgr.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\InputDeviceKeyboard.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\WorldMgr.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Render.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\World.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\DrawableObject.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\WorldObject.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\Game.h" />
+    <ClInclude Include="Sources\Settings.h">
+      <Filter>General</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\StdAfx.h">
+      <Filter>General</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\InputDevice.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\InputMgr.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Macro.h">
+      <Filter>General</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\InputDeviceKeyboard.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\WorldMgr.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Render.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Renderable.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\World.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\DrawableObject.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\WorldObject.h">
+      <Filter>World</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
