@@ -18,12 +18,9 @@ void WorldMgr::Update()
 	m_activeWorld->Update();
 }
 
-WorldPtr WorldMgr::CreateWorld()
+void WorldMgr::AddWorld(WorldPtr world)
 {
-	WorldPtr world = WorldPtr(new World());
 	m_worlds.push_back(world);
-
-	return world;
 }
 
 void WorldMgr::SetActiveWorld(WorldPtr world)

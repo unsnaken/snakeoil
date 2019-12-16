@@ -2,7 +2,7 @@
 
 #include "InputMgr.h"
 #include "WorldMgr.h"
-#include "Render.h"
+#include "Renderer.h"
 
 SO_NAMESPACE_BEGIN;
 
@@ -20,7 +20,7 @@ private:
 
 	std::shared_ptr<InputMgr>	m_inputMgr;
 	std::shared_ptr<WorldMgr>	m_worldMgr;
-	std::shared_ptr<Render>		m_render;
+	std::shared_ptr<Renderer>	m_renderer;
 };
 
 SO_NAMESPACE_END;

@@ -12,7 +12,7 @@ public:
 
 	void Update();
 
-	WorldPtr CreateWorld();
+	void AddWorld(WorldPtr world);
 
 	void SetActiveWorld(WorldPtr world);
 	WorldPtr GetActiveWorld() const;

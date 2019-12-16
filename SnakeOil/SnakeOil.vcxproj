@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\DemoEntityRock.cpp" />
+    <ClCompile Include="Sources\DemoWorld.cpp" />
     <ClCompile Include="Sources\DrawableObject.cpp" />
     <ClCompile Include="Sources\Game.cpp" />
     <ClCompile Include="Sources\InputMgr.cpp" />
     <ClCompile Include="Sources\InputDeviceKeyboard.cpp" />
-    <ClCompile Include="Sources\Render.cpp" />
+    <ClCompile Include="Sources\Renderer.cpp" />
     <ClCompile Include="Sources\Startup.cpp" />
     <ClCompile Include="Sources\StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -31,22 +33,24 @@
     </ClCompile>
     <ClCompile Include="Sources\World.cpp" />
     <ClCompile Include="Sources\WorldMgr.cpp" />
-    <ClCompile Include="Sources\WorldObject.cpp" />
+    <ClCompile Include="Sources\WorldEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\DemoEntityRock.h" />
+    <ClInclude Include="Sources\DemoWorld.h" />
     <ClInclude Include="Sources\DrawableObject.h" />
     <ClInclude Include="Sources\Game.h" />
     <ClInclude Include="Sources\InputDevice.h" />
     <ClInclude Include="Sources\InputDeviceKeyboard.h" />
     <ClInclude Include="Sources\InputMgr.h" />
     <ClInclude Include="Sources\Macro.h" />
-    <ClInclude Include="Sources\Render.h" />
+    <ClInclude Include="Sources\Renderer.h" />
     <ClInclude Include="Sources\Renderable.h" />
     <ClInclude Include="Sources\Settings.h" />
     <ClInclude Include="Sources\StdAfx.h" />
     <ClInclude Include="Sources\World.h" />
     <ClInclude Include="Sources\WorldMgr.h" />
-    <ClInclude Include="Sources\WorldObject.h" />
+    <ClInclude Include="Sources\WorldEntity.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

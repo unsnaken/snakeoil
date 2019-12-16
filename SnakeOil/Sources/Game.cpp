@@ -5,6 +5,8 @@
 #include "InputMgr.h"
 #include "WorldMgr.h"
 
+#include "DemoWorld.h"
+
 SO_NAMESPACE_BEGIN;
 
 const time_t kMillisPerFrame = 16;
@@ -14,9 +16,10 @@ Game::Game():
 {
 	m_inputMgr.reset(new InputMgr());
 	m_worldMgr.reset(new WorldMgr());
-	m_render.reset(new Render());
+	m_renderer.reset(new Renderer(40, 20, DrawableObject::Cyan, DrawableObject::Black));
 
-	WorldPtr demo = m_worldMgr->CreateWorld();
+	std::shared_ptr<DemoWorld> demo = std::make_shared<DemoWorld>();
+	m_worldMgr->AddWorld(demo);
 	m_worldMgr->SetActiveWorld(demo);
 }
 
@@ -40,7 +43,7 @@ void Game::Run()
 		// update game world
 		m_worldMgr->Update();
 		// render game world
-		m_render->Draw();
+		m_renderer->Render(m_worldMgr->GetActiveWorld()->GetDrawableObjects());
 
 		std::time_t sleepTime = (startTime + kMillisPerFrame) - std::time(nullptr);
 		assert(sleepTime >= 0);

@@ -7,11 +7,14 @@
     <Filter Include="World">
       <UniqueIdentifier>{626934e9-7172-47dd-9b8f-1699013ec1cd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Render">
-      <UniqueIdentifier>{87a30b5c-11ca-439e-8ba8-1401e7188ece}</UniqueIdentifier>
-    </Filter>
     <Filter Include="General">
       <UniqueIdentifier>{9ded9db0-7d7c-47fd-9290-65f3be2bc1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{87a30b5c-11ca-439e-8ba8-1401e7188ece}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demo">
+      <UniqueIdentifier>{3728e6fe-172f-4534-8417-0169df251f10}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -29,17 +32,23 @@
     <ClCompile Include="Sources\WorldMgr.cpp">
       <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Render.cpp">
-      <Filter>Render</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\World.cpp">
       <Filter>World</Filter>
     </ClCompile>
     <ClCompile Include="Sources\DrawableObject.cpp">
-      <Filter>Render</Filter>
+      <Filter>Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\WorldObject.cpp">
+    <ClCompile Include="Sources\Renderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\WorldEntity.cpp">
       <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\DemoWorld.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\DemoEntityRock.cpp">
+      <Filter>Demo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,20 +74,26 @@
     <ClInclude Include="Sources\WorldMgr.h">
       <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Render.h">
-      <Filter>Render</Filter>
-    </ClInclude>
     <ClInclude Include="Sources\Renderable.h">
-      <Filter>Render</Filter>
+      <Filter>Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Sources\World.h">
       <Filter>World</Filter>
     </ClInclude>
     <ClInclude Include="Sources\DrawableObject.h">
-      <Filter>Render</Filter>
+      <Filter>Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\WorldObject.h">
+    <ClInclude Include="Sources\Renderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\WorldEntity.h">
       <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\DemoWorld.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\DemoEntityRock.h">
+      <Filter>Demo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
