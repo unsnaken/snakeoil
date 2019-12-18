@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Collider.h"
 #include "InputMgr.h"
 #include "WorldMgr.h"
 #include "Renderer.h"
@@ -18,6 +19,7 @@ public:
 private:
 	bool m_isRunning;
 
+	std::shared_ptr<Collider>	m_collider;
 	std::shared_ptr<InputMgr>	m_inputMgr;
 	std::shared_ptr<WorldMgr>	m_worldMgr;
 	std::shared_ptr<Renderer>	m_renderer;

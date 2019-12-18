@@ -12,6 +12,18 @@ WorldEntity::~WorldEntity()
 {
 }
  
+void WorldEntity::OnCollision(Collidable& collidedObject)
+{
+}
+
+std::vector<WorldEntity::Coordinates> WorldEntity::GetCollisionCoords()
+{
+    for (auto it = m_drawableObjects.begin(); it != m_drawableObjects.end(); ++it)
+    {
+        ;
+    }
+}
+
 DrawableObjectVector WorldEntity::GetDrawableObjects()
 {
     return m_drawableObjects;

@@ -19,6 +19,8 @@ public:
 	void AddEntity(WorldEntity entity);
 	void Update();
 
+	std::vector<Collidable&> GetCollidableObjects();
+
 private:
 	std::vector<WorldEntity> m_worldEntities;
 };

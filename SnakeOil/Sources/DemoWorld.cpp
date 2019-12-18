@@ -7,7 +7,7 @@ SO_NAMESPACE_BEGIN;
 
 DemoWorld::DemoWorld()
 {
-	DemoEntityRock rock = DemoEntityRock(2, 2, 2);
+	DemoEntityRock rock = DemoEntityRock(2, 2, 10);
 	AddEntity(rock);
 }
 

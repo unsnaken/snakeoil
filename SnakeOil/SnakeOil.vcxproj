@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Collider.cpp" />
     <ClCompile Include="Sources\DemoEntityRock.cpp" />
     <ClCompile Include="Sources\DemoWorld.cpp" />
     <ClCompile Include="Sources\DrawableObject.cpp" />
@@ -36,6 +37,8 @@
     <ClCompile Include="Sources\WorldEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Collidable.h" />
+    <ClInclude Include="Sources\Collider.h" />
     <ClInclude Include="Sources\DemoEntityRock.h" />
     <ClInclude Include="Sources\DemoWorld.h" />
     <ClInclude Include="Sources\DrawableObject.h" />

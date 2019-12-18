@@ -16,6 +16,9 @@
     <Filter Include="Demo">
       <UniqueIdentifier>{3728e6fe-172f-4534-8417-0169df251f10}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{544a3eb5-b8e2-4f37-b270-967aebeb527f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Game.cpp" />
@@ -49,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="Sources\DemoEntityRock.cpp">
       <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Collider.cpp">
+      <Filter>Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +100,12 @@
     </ClInclude>
     <ClInclude Include="Sources\DemoEntityRock.h">
       <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Collidable.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Collider.h">
+      <Filter>Physics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 
 #include "Game.h"
 
+#include "CollisionMgr.h"
 #include "InputMgr.h"
 #include "WorldMgr.h"
 
@@ -14,6 +15,7 @@ const time_t kMillisPerFrame = 16;
 Game::Game():
 	m_isRunning(false)
 {
+	m_collider.reset(new Collider());
 	m_inputMgr.reset(new InputMgr());
 	m_worldMgr.reset(new WorldMgr());
 	m_renderer.reset(new Renderer(40, 20, DrawableObject::Cyan, DrawableObject::Black));
@@ -42,6 +44,8 @@ void Game::Run()
 		m_inputMgr->CaptureInput();
 		// update game world
 		m_worldMgr->Update();
+		// detect and process collisions
+		m_collider->Run(m_worldMgr->GetActiveWorld()->GetCollidableObjects());
 		// render game world
 		m_renderer->Render(m_worldMgr->GetActiveWorld()->GetDrawableObjects());
 

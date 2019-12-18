@@ -32,6 +32,15 @@ void World::AddEntity(WorldEntity entity)
 	m_worldEntities.push_back(entity);
 }
 
+std::vector<Collidable&> World::GetCollidableObjects()
+{
+	std::vector<Collidable&> result;
+	result.insert(result.begin(), m_worldEntities.begin(), m_worldEntities.end());
+
+	return result;
+}
+
+
 void World::Update()
 {
 	for (auto it = m_worldEntities.begin(); it != m_worldEntities.end(); ++it)
