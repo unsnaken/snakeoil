@@ -12,7 +12,7 @@ public:
 		int Y;
 	};
 
-	virtual void OnCollision(Collidable& collidedObject) = 0;
+	virtual void OnCollision(Collidable* collidedObject) = 0;
 	virtual std::vector<Coordinates> GetCollisionCoords() = 0;
 };
 

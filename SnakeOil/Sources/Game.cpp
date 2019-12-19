@@ -10,7 +10,7 @@
 
 SO_NAMESPACE_BEGIN;
 
-const time_t kMillisPerFrame = 16;
+const time_t kMillisPerFrame = (1000 / FPS_RATE);
 
 Game::Game():
 	m_isRunning(false)
@@ -18,7 +18,7 @@ Game::Game():
 	m_collider.reset(new Collider());
 	m_inputMgr.reset(new InputMgr());
 	m_worldMgr.reset(new WorldMgr());
-	m_renderer.reset(new Renderer(40, 20, DrawableObject::Yellow, DrawableObject::Black));
+	m_renderer.reset(new Renderer(FIELD_WEIGHT, FIELD_HEIGHT, DrawableObject::Yellow, DrawableObject::Black));
 
 	std::shared_ptr<DemoWorld> demo = std::make_shared<DemoWorld>();
 	m_worldMgr->AddWorld(demo);

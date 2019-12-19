@@ -28,8 +28,8 @@ void Collider::Run(std::vector<Collidable*> collidables)
 			bool isIntersected = TestCoordsIntersection(innerPtr->GetCollisionCoords(), outerPtr->GetCollisionCoords());
 			if (isIntersected)
 			{
-				innerPtr->OnCollision(*outerPtr);
-				outerPtr->OnCollision(*innerPtr);
+				innerPtr->OnCollision(outerPtr);
+				outerPtr->OnCollision(innerPtr);
 			}
 		}
 	}

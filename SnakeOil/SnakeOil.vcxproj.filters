@@ -59,6 +59,9 @@
     <ClCompile Include="Sources\DemoEntitySnake.cpp">
       <Filter>Demo</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\DemoEntityTreat.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Game.h" />
@@ -111,6 +114,9 @@
       <Filter>Physics</Filter>
     </ClInclude>
     <ClInclude Include="Sources\DemoEntitySnake.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\DemoEntityTreat.h">
       <Filter>Demo</Filter>
     </ClInclude>
   </ItemGroup>

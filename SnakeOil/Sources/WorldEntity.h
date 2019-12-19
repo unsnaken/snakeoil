@@ -15,7 +15,7 @@ public:
 	virtual DrawableObjectVector GetDrawableObjects();
 
 	// Collidable
-	virtual void OnCollision(Collidable& collidedObject) {};
+	virtual void OnCollision(Collidable* collidedObject) {};
 	virtual std::vector<Coordinates> GetCollisionCoords();
 
 	// WorldEntity
