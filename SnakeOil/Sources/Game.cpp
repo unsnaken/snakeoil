@@ -2,7 +2,7 @@
 
 #include "Game.h"
 
-#include "CollisionMgr.h"
+#include "Collider.h"
 #include "InputMgr.h"
 #include "WorldMgr.h"
 
@@ -18,7 +18,7 @@ Game::Game():
 	m_collider.reset(new Collider());
 	m_inputMgr.reset(new InputMgr());
 	m_worldMgr.reset(new WorldMgr());
-	m_renderer.reset(new Renderer(40, 20, DrawableObject::Cyan, DrawableObject::Black));
+	m_renderer.reset(new Renderer(40, 20, DrawableObject::Yellow, DrawableObject::Black));
 
 	std::shared_ptr<DemoWorld> demo = std::make_shared<DemoWorld>();
 	m_worldMgr->AddWorld(demo);

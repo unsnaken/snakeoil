@@ -12,17 +12,24 @@ Collider::~Collider()
 {
 }
 
-void Collider::Run(std::vector<Collidable&> collidables)
+void Collider::Run(std::vector<Collidable*> collidables)
 {
 	for (auto outerIt = collidables.begin(); outerIt != collidables.end(); ++outerIt)
 	{
+		Collidable* outerPtr = *outerIt;
 		for (auto innerIt = collidables.begin(); innerIt != collidables.end(); ++innerIt)
 		{
-			bool isIntersected = TestCoordsIntersection(innerIt->GetCollisionCoords(), outerIt->GetCollisionCoords());
+			if (*innerIt == *outerIt)
+			{
+				continue;
+			}
+
+			Collidable* innerPtr = *innerIt;
+			bool isIntersected = TestCoordsIntersection(innerPtr->GetCollisionCoords(), outerPtr->GetCollisionCoords());
 			if (isIntersected)
 			{
-				innerIt->OnCollision(*outerIt);
-				outerIt->OnCollision(*innerIt);
+				innerPtr->OnCollision(*outerPtr);
+				outerPtr->OnCollision(*innerPtr);
 			}
 		}
 	}

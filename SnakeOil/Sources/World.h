@@ -16,13 +16,13 @@ public:
 	DrawableObjectVector GetDrawableObjects();
 
 	// World
-	void AddEntity(WorldEntity entity);
-	void Update();
+	void AddEntity(WorldEntityPtr entity);
+	virtual void Update();
 
-	std::vector<Collidable&> GetCollidableObjects();
+	std::vector<Collidable*> GetCollidableObjects();
 
 private:
-	std::vector<WorldEntity> m_worldEntities;
+	std::vector<WorldEntityPtr> m_worldEntities;
 };
 
 typedef std::shared_ptr<World> WorldPtr;

@@ -2,12 +2,9 @@
 
 #include "Renderer.h"
 
-#include <windows.h>
-
 SO_NAMESPACE_BEGIN;
 
 static const int kWindowColorPairId	= 1;
-static const int kDynColorPairId	= 100;
 
 Renderer::Renderer(int windowWidth, int windowHeight, int bgColor, int textColor)
 {
@@ -17,10 +14,6 @@ Renderer::Renderer(int windowWidth, int windowHeight, int bgColor, int textColor
 
 	curs_set(0);
 	start_color();
-	//init_pair(1, COLOR_RED, COLOR_GREEN);
-	//attron(COLOR_PAIR(1));
-	//mvaddch(2, 3, 'X');
-	//mvaddch(2, 4, 'X');
 
 	// Initialization of the window
 	int startY = (LINES - windowHeight) / 2;
@@ -42,12 +35,16 @@ Renderer::~Renderer()
 
 void Renderer::Render(DrawableObjectVector drawables)
 {
+	wclear(m_window);
+	int colorPairID = 100; // TODO: fix this bulshit with colors
 	for (auto it = drawables.begin(); it != drawables.end(); ++it)
 	{
-		init_pair(kDynColorPairId, it->GetTextColor(), it->GetBGColor());
-		wattron(m_window, COLOR_PAIR(kDynColorPairId));
+		init_pair(colorPairID, it->GetTextColor(), it->GetBGColor());
+		wattron(m_window, COLOR_PAIR(colorPairID));
 		mvwaddch(m_window, it->GetY(), it->GetX(), it->GetSymbol());
+		++colorPairID;
 	}
+	// TODO: handle windows resizing and redraw field
 	wrefresh(m_window);
 }
 

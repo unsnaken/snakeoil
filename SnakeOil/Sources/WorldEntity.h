@@ -5,7 +5,7 @@
 
 SO_NAMESPACE_BEGIN;
 
-class WorldEntity: public Collidable, Renderable
+class WorldEntity: public Collidable, public Renderable
 {
 public:
 	WorldEntity();
@@ -15,16 +15,19 @@ public:
 	virtual DrawableObjectVector GetDrawableObjects();
 
 	// Collidable
-	virtual void OnCollision(Collidable& collidedObject);
+	virtual void OnCollision(Collidable& collidedObject) {};
 	virtual std::vector<Coordinates> GetCollisionCoords();
 
 	// WorldEntity
 	void AddDrawableObject(DrawableObject object);
+	DrawableObjectVector& GetDrawableCollection(); // TODO: get rid of this method since it alsmot duplicates GetDrawableObjects
 
-	void Update();
+	virtual void Update() = 0;
 
 private:
 	DrawableObjectVector m_drawableObjects;
 };
+
+typedef std::shared_ptr<WorldEntity> WorldEntityPtr;
 
 SO_NAMESPACE_END;

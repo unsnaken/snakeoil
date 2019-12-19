@@ -10,10 +10,10 @@ public:
 	Collider();
 	~Collider();
 
-	void Run(std::vector<Collidable&> collidables);
+	void Run(std::vector<Collidable*> collidables);
 
 private:
-	typedef std::vector<Collidable::Coordinates&> CoordsVector;
+	typedef std::vector<Collidable::Coordinates> CoordsVector;
 
 	bool TestCoordsIntersection(CoordsVector coordsA, CoordsVector coordsB);
 };

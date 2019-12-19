@@ -56,6 +56,9 @@
     <ClCompile Include="Sources\Collider.cpp">
       <Filter>Physics</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\DemoEntitySnake.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Game.h" />
@@ -106,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="Sources\Collider.h">
       <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\DemoEntitySnake.h">
+      <Filter>Demo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
