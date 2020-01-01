@@ -22,13 +22,19 @@ ButtonState InputDeviceKeyboard::GetKeyState(Button buttonName) {
 	case Button::Right:
 			buttonCode = VK_RIGHT;
 			break;
+	case Button::Space:
+			buttonCode = VK_SPACE;
+			break;
+	case Button::Esc:
+			buttonCode = VK_ESCAPE;
+			break;
 	}
 
 	short buttonState = ::GetKeyState(buttonCode);
-	if (buttonState == WM_KEYUP || buttonState == WM_SYSKEYUP) {
-		return ButtonState::Up;
+	if (buttonState & 0x8000) {
+		return ButtonState::Down;
 	}
-	return ButtonState::Down;
+	return ButtonState::Up;
 }
 
 SO_NAMESPACE_END;

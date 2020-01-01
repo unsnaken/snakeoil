@@ -1,5 +1,7 @@
 #include "StdAfx.h"
 
+#include "InputMgr.h"
+
 #include "DemoEntitySnake.h"
 
 #include "DrawableObject.h"
@@ -24,6 +26,8 @@ DemoEntitySnake::DemoEntitySnake(int startX, int startY, int size, int color, in
 		DrawableObject obj = DrawableObject(startX + i, startY, color, color, 'X');
 		AddDrawableObject(obj);
 	}
+
+	InputMgr::GetInstance().AddEventListener(this);
 }
 
 DemoEntitySnake::~DemoEntitySnake()
@@ -145,23 +149,46 @@ void DemoEntitySnake::Update()
 				switch(m_currentDirection)
 				{
 				case Direction::Top:
-					// TBD ..
+				{
+					int y = it->GetY();
+					if (y <= 1)
+					{
+						y = FIELD_HEIGHT - 1;
+					}
+					it->SetY(y - 1);
 					break;
+				}
 				case Direction::Bottom:
-					// TBD ..
+				{
+					int y = it->GetY();
+					if (y >= FIELD_HEIGHT - 1)
+					{
+						y = 0;
+					}
+					it->SetY(y + 1);
 					break;
+				}
 				case Direction::Left:
-					// TBD ..
-					break;
-				case Direction::Right:
+				{
 					int x = it->GetX();
-					if (x >= 40 - 1)
+					if (x <= 1)
+					{
+						x = FIELD_WEIGHT - 1;
+					}
+					it->SetX(x - 1);
+					break;
+				}
+				case Direction::Right:
+				{
+					int x = it->GetX();
+					if (x >= FIELD_WEIGHT - 1)
 					{
 						x = 0;
 					}
 					it->SetX(x + 1);
 					break;
-				};
+				}
+				}; // switch(m_currentDirection)
 
 			}
 		}
@@ -170,5 +197,30 @@ void DemoEntitySnake::Update()
 	}
 }
 
+void DemoEntitySnake::OnInputEvent(InputEvent event)
+{
+	if (event.GetState() == ButtonState::Down)
+	{
+		switch (event.GetButton())
+		{
+		case Button::Up:
+			if (m_currentDirection != Direction::Bottom)
+				m_currentDirection = Direction::Top;
+			break;
+		case Button::Down:
+			if (m_currentDirection != Direction::Top)
+				m_currentDirection = Direction::Bottom;
+			break;
+		case Button::Left:
+			if (m_currentDirection != Direction::Right)
+				m_currentDirection = Direction::Left;
+			break;
+		case Button::Right:
+			if (m_currentDirection != Direction::Right)
+				m_currentDirection = Direction::Right;
+			break;
+		};
+	}
+}
 
 SO_NAMESPACE_END;

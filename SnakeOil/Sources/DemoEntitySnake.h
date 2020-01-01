@@ -1,10 +1,11 @@
 #pragma once
 
 #include "WorldEntity.h"
+#include "InputEventListener.h"
 
 SO_NAMESPACE_BEGIN;
 
-class DemoEntitySnake: public WorldEntity
+class DemoEntitySnake: public WorldEntity,  InputEventListener
 {
 public:
 	DemoEntitySnake(int startX, int startY, int size, int color, int velocity);
@@ -12,6 +13,9 @@ public:
 
 	void OnCollision(Collidable* collidedObject);
 	virtual void Update();
+
+	// InputEventListener
+	void OnInputEvent(InputEvent event);
 
 	// DemoEntitySnake
 	void SetColor(int color);
@@ -21,6 +25,7 @@ public:
 
 	void Run();
 	void Stop();
+
 
 private:
 	enum class Direction

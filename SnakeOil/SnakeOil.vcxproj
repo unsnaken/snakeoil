@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\InputEvent.cpp" />
     <ClCompile Include="Sources\DemoEntityTreat.cpp" />
     <ClCompile Include="Sources\DemoEntitySnake.cpp" />
     <ClCompile Include="Sources\Collider.cpp" />
@@ -39,6 +40,9 @@
     <ClCompile Include="Sources\WorldEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\InputEnums.h" />
+    <ClInclude Include="Sources\InputEvent.h" />
+    <ClInclude Include="Sources\InputEventListener.h" />
     <ClInclude Include="Sources\DemoEntityTreat.h" />
     <ClInclude Include="Sources\DemoEntitySnake.h" />
     <ClInclude Include="Sources\Collidable.h" />
@@ -58,12 +62,13 @@
     <ClInclude Include="Sources\World.h" />
     <ClInclude Include="Sources\WorldMgr.h" />
     <ClInclude Include="Sources\WorldEntity.h" />
+    <ClInclude Include="Sources\Templates.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{581913C8-C74D-4D6C-A08B-CAE37C4E1074}</ProjectGuid>
     <RootNamespace>SnakeOil</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -82,13 +87,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>

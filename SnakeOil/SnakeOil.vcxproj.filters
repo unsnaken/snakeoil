@@ -62,6 +62,9 @@
     <ClCompile Include="Sources\DemoEntityTreat.cpp">
       <Filter>Demo</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\InputEvent.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Game.h" />
@@ -118,6 +121,18 @@
     </ClInclude>
     <ClInclude Include="Sources\DemoEntityTreat.h">
       <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Templates.h">
+      <Filter>General</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\InputEventListener.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\InputEvent.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\InputEnums.h">
+      <Filter>Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

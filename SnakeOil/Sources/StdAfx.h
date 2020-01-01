@@ -2,7 +2,9 @@
 
 #include "Settings.h"
 #include "Macro.h"
+#include "Templates.h"
 
+#include <algorithm>
 #include <iostream>
 #include <cassert>
 #include <ctime>

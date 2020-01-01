@@ -19,8 +19,9 @@ public:
 private:
 	bool m_isRunning;
 
+	InputMgr&					m_inputMgr;
+
 	std::shared_ptr<Collider>	m_collider;
-	std::shared_ptr<InputMgr>	m_inputMgr;
 	std::shared_ptr<WorldMgr>	m_worldMgr;
 	std::shared_ptr<Renderer>	m_renderer;
 };
