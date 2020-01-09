@@ -10,7 +10,7 @@
 
 SO_NAMESPACE_BEGIN;
 
-static const int s_kSnakeMaxSize = 16;
+static const int s_kSnakeMaxSize = 30;
 static const int s_kSnakeMinSize = 2;
 
 DemoEntitySnake::DemoEntitySnake(int startX, int startY, int size, int color, int velocity)
@@ -69,18 +69,29 @@ void DemoEntitySnake::IncreaseSize(int value)
 		switch (m_currentDirection)
 		{
 		case Direction::Top:
-			// TBD ..
+		{
+			DrawableObject obj = DrawableObject(theLast.GetX(), theLast.GetY() - i, m_color, m_color, 'X');
+			AddDrawableObject(obj);
 			break;
+		}
 		case Direction::Bottom:
-			// TBD ..
+		{
+			DrawableObject obj = DrawableObject(theLast.GetX(), theLast.GetY() + i, m_color, m_color, 'X');
+			AddDrawableObject(obj);
 			break;
+		}
 		case Direction::Left:
-			// TBD ..
+		{
+			DrawableObject obj = DrawableObject(theLast.GetX() - i, theLast.GetY(), m_color, m_color, 'X');
+			AddDrawableObject(obj);
 			break;
+		}
 		case Direction::Right:
+		{
 			DrawableObject obj = DrawableObject(theLast.GetX() + i, theLast.GetY(), m_color, m_color, 'X');
 			AddDrawableObject(obj);
 			break;
+		}
 		};
 	}
 
@@ -130,7 +141,7 @@ void DemoEntitySnake::OnCollision(Collidable* collidedObject)
 	if (treat != nullptr)
 	{
 		treat->ReSpawn();
-		//IncreaseSize(2);
+		IncreaseSize(2);
 		return;
 	}
 }

@@ -38,9 +38,13 @@ DrawableObjectVector& WorldEntity::GetDrawableCollection()
     return m_drawableObjects;
 }
 
+void WorldEntity::ClearDrawableCollection()
+{
+    m_drawableObjects.clear();
+}
+
 void WorldEntity::Update()
 {
 }
-
 
 SO_NAMESPACE_END;

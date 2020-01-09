@@ -3,9 +3,21 @@
 
 #include "DemoEntityTreat.h"
 
+#include <stdlib.h>
+
 SO_NAMESPACE_BEGIN;
 
 DemoEntityTreat::DemoEntityTreat(int x, int y)
+{
+	AddLocationCoords(x, y);
+	AddShapeToDrowables(x, y);
+}
+
+DemoEntityTreat::~DemoEntityTreat()
+{
+}
+
+void DemoEntityTreat::AddShapeToDrowables(int x, int y)
 {
 	for (int i = 0; i < 2; ++i)
 	{
@@ -14,16 +26,23 @@ DemoEntityTreat::DemoEntityTreat(int x, int y)
 	}
 }
 
-DemoEntityTreat::~DemoEntityTreat()
+void DemoEntityTreat::AddLocationCoords(int x, int y)
 {
+	m_locationCoords.push_back(DemoEntityTreat::Coordinates{ x, y });
+}
+
+DemoEntityTreat::Coordinates DemoEntityTreat::GetNextLocationCoords()
+{
+	int nextVectorPos = std::rand() % m_locationCoords.size();
+	return m_locationCoords[nextVectorPos];
 }
 
 void DemoEntityTreat::ReSpawn()
 {
-	DrawableObjectVector& drawables = GetDrawableCollection();
-	// TODO: make interface in Drawables for these
-	drawables.clear();
-	// TBD...
+	DemoEntityTreat::Coordinates nextLocation = GetNextLocationCoords();
+
+	ClearDrawableCollection();
+	AddShapeToDrowables(nextLocation.x, nextLocation.y);
 }
 
 SO_NAMESPACE_END;

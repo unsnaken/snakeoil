@@ -21,6 +21,7 @@ public:
 	// WorldEntity
 	void AddDrawableObject(DrawableObject object);
 	DrawableObjectVector& GetDrawableCollection(); // TODO: get rid of this method since it alsmot duplicates GetDrawableObjects
+	void ClearDrawableCollection();
 
 	virtual void Update() = 0;
 
